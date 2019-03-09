@@ -11,3 +11,4 @@ go test -v ./... -run ^TestUnit -coverprofile=cov2.out
 gocovmerge cov1.out cov2.out > cov.out
 rm cov1.out
 rm cov2.out
+chown -R $UID:$GID *
