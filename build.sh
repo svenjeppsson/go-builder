@@ -7,4 +7,4 @@ mockery -all -dir interfaces
 golangci-lint run
 go vet .
 go test -v ./... -coverprofile=cov.out
-chown -R $UID:$GID *
+chown -R $CONTAINER_UID:$GID *CONTAINER_GID
