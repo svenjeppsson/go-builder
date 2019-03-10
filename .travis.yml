@@ -10,7 +10,6 @@ script:
   - docker build . -t xthinker/go-builder:$(cat VERSION)
 
 after_success:
-  - env
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push xthinker/go-builder:$(cat VERSION)
   - docker tag xthinker/go-builder:$(cat VERSION) xthinker/go-builder:latest
